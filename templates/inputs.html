@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>MadLibs</h1>
+
+    <form action="/story">
+        {% for prompt in prompts %}
+        <div style="margin: 20px 0">
+        <label for="{{prompt}}"><strong>{{prompt}}:</strong></label>
+        <input type="text" name="{{prompt}}">
+        </div>
+        {% endfor %}
+        <input type="text" name="story_choice" value="{{story_choice}}" style="display: none;">
+        <button type="submit">Submit</button>
+    </form>
+    {% endblock %}

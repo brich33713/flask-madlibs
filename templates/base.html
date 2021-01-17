@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Welcome To MadLibs!</h1>
+    <form action="/inputs">
+    <label for="Story">Choose A Story:</label>
+    <select name="Story" id="Story">
+        {% for choice in stories %}
+        <option value="{{stories.index(choice)}}">{{choice.title}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
